@@ -34,6 +34,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    env:
+      IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/copilot-ci-cd
 
     steps:
       - name: Check out repository
@@ -54,18 +56,18 @@ jobs:
           context: .
           push: true
           tags: |
-            fariyadali/copilot-ci-cd:latest
-            fariyadali/copilot-ci-cd:1.0
-            fariyadali/copilot-ci-cd:1.0.0
-            fariyadali/copilot-ci-cd:1.0.0-SNAPSHOT
-            fariyadali/copilot-ci-cd:1.0.0-RELEASE
-            fariyadali/copilot-ci-cd:1.0.0-RC1
-            fariyadali/copilot-ci-cd:1.0.0-RC2
-            fariyadali/copilot-ci-cd:1.0.0-RC3
-            fariyadali/copilot-ci-cd:1.0.0-RC4
-            fariyadali/copilot-ci-cd:1.0.0-RC5
-            fariyadali/copilot-ci-cd:1.0.0-RC6
-            fariyadali/copilot-ci-cd:1.0.0-RC7
-            fariyadali/copilot-ci-cd:1.0.0-RC8
-            fariyadali/copilot-ci-cd:1.0.0-RC9
-            fariyadali/copilot-ci-cd:1.0.0-RC10
+            ${{ env.IMAGE_NAME }}:latest
+            ${{ env.IMAGE_NAME }}:1.0
+            ${{ env.IMAGE_NAME }}:1.0.0
+            ${{ env.IMAGE_NAME }}:1.0.0-SNAPSHOT
+            ${{ env.IMAGE_NAME }}:1.0.0-RELEASE
+            ${{ env.IMAGE_NAME }}:1.0.0-RC1
+            ${{ env.IMAGE_NAME }}:1.0.0-RC2
+            ${{ env.IMAGE_NAME }}:1.0.0-RC3
+            ${{ env.IMAGE_NAME }}:1.0.0-RC4
+            ${{ env.IMAGE_NAME }}:1.0.0-RC5
+            ${{ env.IMAGE_NAME }}:1.0.0-RC6
+            ${{ env.IMAGE_NAME }}:1.0.0-RC7
+            ${{ env.IMAGE_NAME }}:1.0.0-RC8
+            ${{ env.IMAGE_NAME }}:1.0.0-RC9
+            ${{ env.IMAGE_NAME }}:1.0.0-RC10
